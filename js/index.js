@@ -27,22 +27,50 @@ var app = {
 	bgDiv:null, 
 	
 	onCancelButton:function(){	  
+ 		document.location.href="index.html";	
+	},
+	
+	onBuyButton: function(){
+		// change the image to the animation of cart
+		jQuery('.cartanim').css('display','inherit');
+		jQuery('.cartanim').html('<img src="img/addcartanim.gif">');
+		jQuery('.cartanim img').mousedown(function(){return false});	
+		
+		// change the anim to static default cart image after anim finished play
+		setTimeout(function(){  
+			jQuery('.cartanim').html('<img src="img/cartonly.gif">');	
+			jQuery('.cartanim img').mousedown(function(){return false});	
+			 
+			// hide shelfs image
+			jQuery( "#draggable" ).css('display', 'inherit');	
+			
+			// display zoomed image
+			jQuery('.zoomed').css('display', 'none');  
+						 
+		}, 2500);
 	},
 	
 	doScenario: function(step){
-		var lastStep = 3;
+		var lastStep = 7;
 		var scenarioDiv = jQuery('.scenario2');
 		scenarioDiv.css('background', 'url(img/' + step + '.jpg) no-repeat');
 		
 		if(step == lastStep){
-			// show thumbs up
-			
 			// back to initial (show bg.jpg);	
+			setTimeout(function(){  
+				document.location.href="index.html";				 
+			}, 2000);
 		}
 	}
 };
  
-jQuery(document).ready(function(e) {
+jQuery(document).ready(function(e) {	
+	var drgbl = document.getElementById( "draggable" );
+	if(typeof(drgbl) == "undefined" || drgbl == null)
+		return;		
+		
+	jQuery('.cartanim img').mousedown(function(){return false});	
+	
 	var appdiv = jQuery('.app'); 
 	var loadingGif = jQuery('.loadingGif');
 	var zoomed = jQuery('.zoomed');
@@ -50,7 +78,7 @@ jQuery(document).ready(function(e) {
 	// set to gone when zoomed display got clicked
 	zoomed.click(function(){
 		// hide the zoomed image
-		zoomed.css('display', 'none')
+		zoomed.css('display', 'none');
 		// and display big shelf image
 	 	jQuery( "#draggable" ).css('display', 'inherit');	
 	});
@@ -58,6 +86,7 @@ jQuery(document).ready(function(e) {
 	jQuery( "#draggable" ).draggable({
 		start: function(){
 			jQuery( "#draggable" ).css('display', 'inherit');	
+			loadingGif.html("");		 
 		},
 		
 		stop: function() {	
@@ -81,7 +110,7 @@ jQuery(document).ready(function(e) {
 				// display zoomed image
 				zoomed.css('display', 'inherit'); 
 				
-				// remove loading gif 
+				// remove loading gif  (zooming animation)
 				loadingGif.html("");		 
 			}, 2500);
 		}	
