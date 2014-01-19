@@ -1,0 +1,27 @@
+CACHE MANIFEST
+ 
+img/_1.jpg
+img/0.jpg
+img/1.jpg
+img/2.jpg
+img/3.jpg
+img/4.jpg
+img/5.jpg
+img/6.jpg
+img/7.jpg 
+img/addcartanim.gif
+img/anim.gif
+img/bg.jpg
+img/cart.png
+img/cartonly.gif
+img/zoomed.jpg
+
+css/index.css
+
+js/index.js
+js/eq.js                          
+js/jquery-1.10.2.js               
+js/jquery-2.0.3.min.js
+js/jquery-2.0.3.min.map
+js/jquery-ui-1.10.4.custom.min.js
+js/jquery.ui.touch-punch.min.js

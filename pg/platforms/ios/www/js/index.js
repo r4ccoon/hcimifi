@@ -92,7 +92,7 @@ jQuery(document).ready(function(e) {
 		stop: function() {	
 			setTimeout(function(){ 
 				// append and center loading gif
-				loadingGif.center();
+				//loadingGif.center();
 				loadingGif.html('<img src="img/anim.gif" />');	
 				
 				// disable drag loading gif image	 
