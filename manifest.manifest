@@ -25,3 +25,9 @@ js/jquery-2.0.3.min.js
 js/jquery-2.0.3.min.map
 js/jquery-ui-1.10.4.custom.min.js
 js/jquery.ui.touch-punch.min.js
+
+cordova.js
+cordova_plugin.js
+
+scenario2.html
+index.html
