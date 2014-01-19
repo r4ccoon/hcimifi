@@ -13,8 +13,7 @@
     <div class="menu">
     <input type="button" value="scenario 1" onClick="document.location.href='index.html'">
     <input type="button" value="scenario 2" onClick="document.location.href='scenario2.html'">
-    </div>    
-    <div class="scenario2_menu">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <input type="button" value="0" onClick="app.doScenario(0)">
     <input type="button" value="1" onClick="app.doScenario(1)">
     <input type="button" value="2" onClick="app.doScenario(2)">
@@ -23,7 +22,7 @@
     <input type="button" value="5" onClick="app.doScenario(5)">
     <input type="button" value="6" onClick="app.doScenario(6)">
     <input type="button" value="7" onClick="app.doScenario(7)">
-    </div>  
+    </div>     
     <div class="scenario2"></div>
 
         <script type="text/javascript" src="cordova.js"></script>
@@ -34,7 +33,15 @@
 		
             app.initialize();
 			
-			jQuery(document).ready(function(e) {                
+			jQuery(document).ready(function(e) {      
+				$(document).bind(
+				  'touchmove',
+				  function(e) {
+					e.preventDefault();
+				  }
+				);
+			
+			          
 				var bod = jQuery('.scenario2');
 				var wHeight = (jQuery(window).height()) + "px";
 				bod.css('height', wHeight);
